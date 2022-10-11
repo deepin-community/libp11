@@ -1,0 +1,354 @@
+libp11 (0.4.11-1) unstable; urgency=medium
+
+  * New upstream release
+  * Standards-Version to 4.5.0.3
+  * Drop upstreamed patch
+
+ -- Eric Dorland <eric@debian.org>  Sat, 17 Oct 2020 22:48:01 -0400
+
+libp11 (0.4.10-2) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Trim trailing whitespace.
+  * Use secure copyright file specification URI.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+
+  [ Eric Dorland ]
+  * Add patch for "fix use-after-free on PKCS11_pkey_meths." (Closes: 969559)
+
+ -- Eric Dorland <eric@debian.org>  Sun, 13 Sep 2020 02:10:42 -0400
+
+libp11 (0.4.10-1) unstable; urgency=medium
+
+  [ Eric Dorland ]
+  * New upstream release
+  * Switch to debhelper compat level 12
+  * Standards-Version to 4.3.0.3
+
+ -- Eric Dorland <eric@debian.org>  Sun, 07 Jul 2019 02:04:13 -0400
+
+libp11 (0.4.9-4) unstable; urgency=medium
+
+  * Drop old override for --enginesdir.
+    The defaults are now correct. Thanks James Bottomley for the report.
+    (Closes: 923208)
+
+ -- Eric Dorland <eric@debian.org>  Wed, 27 Feb 2019 02:28:09 -0500
+
+libp11 (0.4.9-3) unstable; urgency=medium
+
+  * Add correct Breaks/Replaces on libengine-pkcs11-openssl1.1 (Closes: 913066)
+
+ -- Eric Dorland <eric@debian.org>  Mon, 19 Nov 2018 00:30:17 -0500
+
+libp11 (0.4.9-2) unstable; urgency=medium
+
+  * Add libengine-pkcs11-openssl1.1 transitional package (Closes: 884199)
+
+ -- Eric Dorland <eric@debian.org>  Sun, 04 Nov 2018 15:13:07 -0500
+
+libp11 (0.4.9-1) unstable; urgency=medium
+
+  * New upstream release
+  * Fix watch file to fetch signature file
+  * Import new upstream signing key from Michał Trojnara
+  * Standards-Version to 4.2.1.1
+  * Add Rules-Requires-Root: no
+  * Add new symbols introduced in 0.4.9
+
+ -- Eric Dorland <eric@debian.org>  Sun, 30 Sep 2018 18:36:02 -0400
+
+libp11 (0.4.7-3) unstable; urgency=medium
+
+  * debhelper to compat version 11
+  * Move VCS urls to salsa.debian.org
+  * Standards-Version to 4.1.3
+  * Force build-deps on libssl >= 1.1 (Closes: 884320)
+
+ -- Eric Dorland <eric@debian.org>  Fri, 02 Feb 2018 14:48:22 -0500
+
+libp11 (0.4.7-2) unstable; urgency=medium
+
+  * debian/control, debian/libengine-pkcs11-openssl.install, debian/rules:
+    Rebuild against libssl 1.1 once again. (Closes: #875349)
+  * debian/control, debian/libp11-3.install, debian/libp11-3.symbols,
+    debian/rules: Move to openssl 1.1 bumps libp11 soname.
+  * debian/control: Standards-Version to 4.1.2.
+  * debian/control: Replaces, Conflict libengine-pkcs11-openssl1.1.
+
+ -- Eric Dorland <eric@debian.org>  Mon, 11 Dec 2017 01:13:20 -0500
+
+libp11 (0.4.7-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/control, debian/libp11-3.install, debian/libp11-3.symbols,
+    debian/rules: Revert soname bump.
+  * debian/control, debian/libengine-pkcs11-openssl.install, debian/rules:
+    Go back to building agaisnt libssl 1.0 for the moment.
+
+ -- Eric Dorland <eric@debian.org>  Mon, 07 Aug 2017 14:58:54 -0400
+
+libp11 (0.4.4-2) experimental; urgency=medium
+
+  * Target to experimental.
+  * debian/control, debian/libengine-pkcs11-openssl.install, debian/rules:
+    Patch from Luke Faraone to rebuild against libssl 1.1 and fix the path
+    to the engine directory. (Closes: #846548)
+  * debian/control, debian/libp11-3.install, debian/libp11-3.symbols,
+    debian/rules: Moving to openssl 1.1 bumps libp11 soname. (Closes:
+    #859547)
+
+ -- Eric Dorland <eric@debian.org>  Sun, 21 May 2017 17:56:55 -0400
+
+libp11 (0.4.4-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Eric Dorland <eric@debian.org>  Sat, 28 Jan 2017 03:13:56 -0500
+
+libp11 (0.4.3-1) unstable; urgency=medium
+
+  * New upstream release. (Closes: #846774)
+  * debian/patches/0001-Add-enginesexecdir-use-it-instead-of-enginesdir.patch:
+    Drop upstreamed enginesexecdir patch.
+  * debian/control: Switch back to libssl 1.0 for the moment.
+  * debian/compat, debian/control, debian/rules: Switch to debhelper 10.
+  * debian/libp11-2.symbols: Add LIBP11_2 symbol versions.
+
+ -- Eric Dorland <eric@debian.org>  Tue, 06 Dec 2016 00:16:12 -0500
+
+libp11 (0.4.2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/control, debian/libengine-pkcs11-openssl.install, debian/rules:
+    Move libengine-pkcs11-openssl package here.
+  *
+    debian/patches/0001-Add-enginesexecdir-use-it-instead-of-enginesdir.patch:
+    Use enginesexecdir instead of enginesdir, to work around
+    install-exec-hook issues. (Closes: #840728)
+
+ -- Eric Dorland <eric@debian.org>  Sun, 23 Oct 2016 01:13:29 -0400
+
+libp11 (0.4.1-1) unstable; urgency=medium
+
+  * New upstream release. (Closes: #835585)
+
+ -- Eric Dorland <eric@debian.org>  Sun, 18 Sep 2016 22:05:30 -0400
+
+libp11 (0.4.0-1) unstable; urgency=medium
+
+  * New upstream release. (Closes: #828406)
+  * debian/libp11-2.symbols: Add new symbols introduced in 0.4.0.
+  * debian/libp11-2.shlibs: Remove unnecessary shlibs file.
+  * debian/control: Upgrade Standards-Version to 3.9.8.
+  * debian/libp11-2.install, debian/libp11-dev.install: Tighten globs to
+    only catch libp11.
+
+ -- Eric Dorland <eric@debian.org>  Sun, 24 Jul 2016 16:54:50 -0400
+
+libp11 (0.3.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/watch: Switch signature extension.
+  * debian/control: Update Vcs-* fields to use https.
+  * debian/libp11-2.symbols: Add new symbols.
+
+ -- Eric Dorland <eric@debian.org>  Sat, 30 Jan 2016 00:23:19 -0500
+
+libp11 (0.3.0-2) unstable; urgency=medium
+
+  * debian/control, debian/rules: Drop libp11-2-dbg and use the auto
+    generated -dbgsym package.
+  * debian/control: Bump Standards-Version to 3.9.6.1.
+  * debian/libp11-dev.examples: Ship only the example *.c and README.
+
+ -- Eric Dorland <eric@debian.org>  Fri, 25 Dec 2015 01:22:12 -0500
+
+libp11 (0.3.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/gbp.conf: Use upstream-vcs-tag.
+  * debian/copyright, debian/libp11-dev.doc-base, debian/libp11-dev.docs:
+    Docs have been dropped.
+  * debian/upstream/signing-key.asc, debian/watch: Add upstream signing key.
+  * debian/libp11-2.symbols: Add ECDSA symbols.
+  * debian/libp11-2.shlibs: Bump shlibs version.
+
+ -- Eric Dorland <eric@debian.org>  Sat, 17 Oct 2015 01:42:40 -0400
+
+libp11 (0.2.8-6) unstable; urgency=medium
+
+  * debian/gbp.conf: Use pristine-tar.
+  * debian/control: Set the maintainer to pkg-opensc-maint and mark myself
+    as an uploade.
+
+ -- Eric Dorland <eric@debian.org>  Tue, 28 Apr 2015 22:19:54 -0400
+
+libp11 (0.2.8-5) unstable; urgency=medium
+
+  * debian/control: Standards-Version to 3.9.6 (no changes).
+  * debian/control: Canonicalize the Vcs-* headers.
+  * debian/control: Update Homepage field for new GitHub home.
+  * debian/control: Run wrap-and-sort.
+
+ -- Eric Dorland <eric@debian.org>  Fri, 10 Oct 2014 16:09:29 -0400
+
+libp11 (0.2.8-4) unstable; urgency=medium
+
+  * debian/control, debian/rules: Use dh-autoreconf. Thanks Breno
+    Leitao. (Closes: #750494)
+  * debian/watch: Update for new GitHub home.
+
+ -- Eric Dorland <eric@debian.org>  Sun, 08 Jun 2014 21:26:36 -0400
+
+libp11 (0.2.8-3) unstable; urgency=low
+
+  * debian/control: Change build dependency on debhelper to >= 9.
+  * debian/control: Upgrade Standards-Version to 3.9.4.
+  * debian/control, debian/rules: Use autotools-dev.
+  * debian/copyright: New DEP-5 copyright file.
+
+ -- Eric Dorland <eric@debian.org>  Sun, 15 Sep 2013 15:24:44 -0400
+
+libp11 (0.2.8-2) unstable; urgency=low
+
+  * debian/compat, debian/control: Use debhelper compat level v9.
+  * debian/control, debian/libp11-2.install, debian/libp11-dev.install:
+    Convert the package to Multi-Arch.
+  * debian/control: Upgrade Standards-Version to 3.9.2.0
+
+ -- Eric Dorland <eric@debian.org>  Sat, 24 Sep 2011 20:05:32 -0400
+
+libp11 (0.2.8-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/libp11-dev.install: Remove unneeded .la file. (Closes: #622516)
+  * debian/libp11-1.install, debian/libp11-2.install,
+    debian/libp11-1.shlibs, debian/libp11-2.shlibs,
+    debian/libp11-1.symbols, debian/libp11-2.symbols, debian/control,
+    debian/rules: Bump soname to 2.
+
+ -- Eric Dorland <eric@debian.org>  Sun, 01 May 2011 23:14:12 -0400
+
+libp11 (0.2.7-3) unstable; urgency=low
+
+  * debian/libp11-dev.docs: Fix bad documentation paths. (Closes: #585402)
+  * debian/compat, debian/control: Upgrade to debhelper level 8.
+  * debian/source/format: Convert to 3.0 (quilt) source format.
+
+ -- Eric Dorland <eric@debian.org>  Sun, 20 Feb 2011 01:04:29 -0500
+
+libp11 (0.2.7-2) unstable; urgency=high
+
+  * debian/rules: Fix dh_strip invocation to use proper debug
+    package. (Closes: #594504)
+  * debian/control:
+    - Bump debhelper Build-Depends to get override_ support.
+    - Bump Standards-Version to 3.9.1.0.
+
+ -- Eric Dorland <eric@debian.org>  Thu, 09 Sep 2010 01:37:53 -0400
+
+libp11 (0.2.7-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Eric Dorland <eric@debian.org>  Fri, 25 Dec 2009 02:46:56 -0500
+
+libp11 (0.2.6-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/compat: Upgrade to version 7.
+  * debian/rules, debian/control: Use dh instead of debhelper.
+  * debian/control: Upgrade Standards-Version to 3.8.3.
+  * debian/libp11-1.install,  debian/libp11-1.shlibs, debian/libp11-1.symbols,
+    debian/control: Rename libp11-0 to libp11-1
+
+ -- Eric Dorland <eric@debian.org>  Sun, 16 Aug 2009 23:45:00 -0400
+
+libp11 (0.2.4-2) unstable; urgency=low
+
+  * debian/control:
+    - Add ${misc:Depends} to packages.
+    - Bump Standards-Version to 3.8.1.
+    - Change libp11-0-dbg's Section to debug.
+
+ -- Eric Dorland <eric@debian.org>  Mon, 06 Apr 2009 03:51:15 -0400
+
+libp11 (0.2.4-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/libp11-0.symbols:
+    - Add Build-Depends-Package header.
+    - Add changes for 0.2.4. Some symbols were removed as the exports were
+      tightened. The soname was not bumped, but as no one should be using
+      those symbols it should be ok.
+
+ -- Eric Dorland <eric@debian.org>  Sun, 08 Mar 2009 21:25:39 -0400
+
+libp11 (0.2.3-2) unstable; urgency=low
+
+  * debian/control:
+    - Set Priority to extra for the -dbg package, as the override file says.
+    - Add Homepage and Vcs-* headers.
+  * debian/libp11-0.symbols: Add symbols file for new symbol based
+    dependency resolution.
+  * debian/libp11-0.shlibs: Bump version for last upstream release.
+
+ -- Eric Dorland <eric@debian.org>  Thu, 22 Nov 2007 22:55:45 -0500
+
+libp11 (0.2.3-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/control:
+    - Bump Standards-Version to 3.7.2.2.
+    - Use ${binary:Version} instead of ${Source-Version}.
+
+ -- Eric Dorland <eric@debian.org>  Tue, 17 Jul 2007 22:23:31 -0400
+
+libp11 (0.2.2-2) unstable; urgency=low
+
+  * debian/watch: Fix completely screwed up watch file, looks like it was
+    still half example.
+  * debian/libp11-0.shlibs: Bump shlibs version, I think there are new
+    symbols in this version.
+
+ -- Eric Dorland <eric@debian.org>  Sun, 11 Jun 2006 01:25:03 -0400
+
+libp11 (0.2.2-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/control:
+    - Standards-Version to 3.7.2.0.
+    - Add -dbg package.
+    - Need at least debhelper 5.
+  * debian/compat: Debhelper level to 5.
+
+ -- Eric Dorland <eric@debian.org>  Sat, 10 Jun 2006 01:08:21 -0400
+
+libp11 (0.2.1-2) unstable; urgency=low
+
+  * debian/control:
+    - libp11-dev needs to depend of pkg-config.
+    - Rename libp11-1 to libp11-0, since that is the real soname.
+    - Conflict and Replace libp11-1.
+  * debian/libp11-1.*: Rename to debian/libp11-0.*.
+  * debian/libp11-0.shlibs: Fix soname and shlib dependency.
+
+
+ -- Eric Dorland <eric@debian.org>  Tue,  6 Dec 2005 02:14:42 -0500
+
+libp11 (0.2.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/libp11-1.shlibs: Bump dependency.
+  * debian/copyright: Include RSA license info. svn2cl license is not
+    necessary, it's not in the tarball.
+
+ -- Eric Dorland <eric@debian.org>  Sat, 26 Nov 2005 19:20:30 -0500
+
+libp11 (0.2.0-1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Eric Dorland <eric@debian.org>  Wed, 23 Nov 2005 01:32:21 -0500

@@ -1,0 +1,69 @@
+Source: libp11
+Section: libdevel
+Priority: optional
+Maintainer: Debian OpenSC Maintainers <pkg-opensc-maint@lists.alioth.debian.org>
+Uploaders: Eric Dorland <eric@debian.org>
+Build-Depends: debhelper-compat (= 12),
+               libltdl3-dev,
+               libp11-kit-dev,
+               libssl-dev (>= 1.1),
+               pkg-config
+Standards-Version: 4.5.0.3
+Rules-Requires-Root: no
+Homepage: https://github.com/OpenSC/libp11
+Vcs-Git: https://salsa.debian.org/opensc-team/libp11.git
+Vcs-Browser: https://salsa.debian.org/opensc-team/libp11
+
+Package: libp11-dev
+Architecture: any
+Depends: libp11-3 (= ${binary:Version}),
+         libssl-dev,
+         pkg-config,
+         ${misc:Depends}
+Description: pkcs#11 convenience library - development files
+ Libp11 is a library to simplify using smart cards via PKCS#11
+ modules.  It was spun of the OpenSC project but can be used with any
+ pkcs#11 module.
+ .
+ This package contains the header files and static libraries.
+
+Package: libp11-3
+Architecture: any
+Multi-Arch: same
+Section: libs
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Breaks: libp11-2
+Replaces: libp11-2
+Description: pkcs#11 convenience library
+ Libp11 is a library to simplify using smart cards via PKCS#11
+ modules.  It was spun of the OpenSC project but can be used with any
+ pkcs#11 module.
+
+Package: libengine-pkcs11-openssl
+Architecture: any
+Multi-Arch: same
+Depends: p11-kit, ${misc:Depends}, ${shlibs:Depends}
+Conflicts: libopensc-openssl
+Breaks: libengine-pkcs11-openssl1.1 (<< 0.4.9-2)
+Replaces: libopensc-openssl, libengine-pkcs11-openssl1.1 (<< 0.4.9-2)
+Provides: libopensc-openssl, libengine-pkcs11-openssl1.1
+Description: OpenSSL engine for PKCS#11 modules
+ With this engine for OpenSSL you can use OpenSSL library
+ and command line tools with any PKCS#11 implementation as
+ backend for the crypto operations.
+ .
+ Engine_pkcs11 was developed for smart cards, and mostly
+ for the OpenSC PKCS#11 module, but it should work fine with
+ any PKCS#11 implementation.
+ .
+ Engine_pkcs11 is a spin off from OpenSC and replaced
+ libopensc-openssl.
+
+Package: libengine-pkcs11-openssl1.1
+Section: oldlibs
+Architecture: any
+Multi-Arch: same
+Depends: libengine-pkcs11-openssl (= ${binary:Version}), ${misc:Depends}
+Description: dummy package for upgrades from libengine-pkcs11-openssl1.1
+ Can be safely removed.
